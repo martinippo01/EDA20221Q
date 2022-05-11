@@ -179,7 +179,6 @@ public class BinaryTree implements BinaryTreeService {
     }
 
     @Override
-// En la clase BinaryTree
     public boolean equals(Object o){
         if(o == this)
             return true;
