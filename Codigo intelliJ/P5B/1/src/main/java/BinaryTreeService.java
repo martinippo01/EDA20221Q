@@ -8,4 +8,5 @@ public interface BinaryTreeService {
 
     public void toFile(String filename);
 
+    public int getHeight();
 }

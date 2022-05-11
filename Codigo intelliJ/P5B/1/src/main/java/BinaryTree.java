@@ -194,10 +194,16 @@ public class BinaryTree implements BinaryTreeService {
         return this.root.equals(toCompare.root);
     }
 
-
     @Override
     public int hashCode() {
         return Objects.hash(root, BRENCH, inputScanner);
+    }
+
+    public int getHeight(){
+        if(root == null)
+            return -1;
+
+        return root.getHeight();
     }
 
     // hasta el get() no se evalua
@@ -211,12 +217,10 @@ public class BinaryTree implements BinaryTreeService {
             return left;
         }
 
-
         public Node setRightTree(Node aNode) {
             right= aNode;
             return right;
         }
-
 
         public Node() {
             // TODO Auto-generated constructor stub
@@ -309,6 +313,20 @@ public class BinaryTree implements BinaryTreeService {
 
             return this.data.equals(toCompare.data) && this.left.equals(toCompare.left) && this.right.equals(toCompare.right);
         }
+
+        public int getHeight(){
+            if(left == null && right == null)
+                return 0;
+
+            int leftH = 0, rightH = 0;
+
+            if(left != null)
+                leftH = left.getHeight();
+            if(right != null)
+                rightH = right.getHeight();
+
+            return (leftH > rightH) ? leftH + 1 : rightH + 1;
+        }
     }  
 
 
@@ -343,6 +361,7 @@ public class BinaryTree implements BinaryTreeService {
         BinaryTreeService rta = new BinaryTree("data0_1.txt");
         System.out.println(rta);
         rta.toFile("data0_1-bis.txt");
+        System.out.println(rta.getHeight());
         //rta.preorder();
         //rta.postorder();
         //rta.printHierarchy();
@@ -351,6 +370,7 @@ public class BinaryTree implements BinaryTreeService {
         BinaryTreeService rta2 = new BinaryTree("data0_2.txt");
         System.out.println(rta2);
         rta2.toFile("data0_2-bis.txt");
+        System.out.println(rta2.getHeight());
         //rta2.preorder();
         //rta2.postorder();
         //rta2.printHierarchy();
@@ -359,6 +379,7 @@ public class BinaryTree implements BinaryTreeService {
         BinaryTreeService rta3 = new BinaryTree("data0_3.txt");
         System.out.println(rta3);
         rta3.toFile("data0_3-bis.txt");
+        System.out.println(rta3.getHeight());
         //rta3.preorder();
         //rta3.postorder();
         //rta3.printHierarchy();
