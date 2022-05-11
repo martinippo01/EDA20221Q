@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: Tests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.05 s <<< FAILURE! - in Tests
+testDelete  Time elapsed: 0.009 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <11> but was: <12>
+	at Tests.testDelete(Tests.java:75)
+
+testInsert  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at Tests.testInsert(Tests.java:61)
+
+testSearch  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at Tests.testSearch(Tests.java:87)
+
